@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@astrojs/tailwind': ^2.0.2
+  '@tabler/icons': ^1.113.0
   '@tailwindcss/aspect-ratio': 0.4.2
   '@tailwindcss/forms': 0.5.3
   '@tailwindcss/typography': 0.5.8
@@ -17,6 +18,7 @@ specifiers:
 
 dependencies:
   '@astrojs/tailwind': 2.1.1_tailwindcss@3.2.1
+  '@tabler/icons': 1.113.0
   '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.2.1
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.1
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.1
@@ -565,6 +567,18 @@ packages:
     dependencies:
       '@proload/core': 0.3.3
       tsm: 2.2.2
+    dev: false
+
+  /@tabler/icons/1.113.0:
+    resolution: {integrity: sha512-DjxsvR/0HFHD/utQlM+q3wpl1W2n+jgEZkyfkCkc295rCoAfeXHIBfz/9ROrSHkr205Kq/M8KpQR0Nd4kjwODQ==}
+    peerDependencies:
+      react: ^16.x || 17.x || 18.x
+      react-dom: ^16.x || 17.x || 18.x
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
     dev: false
 
   /@tailwindcss/aspect-ratio/0.4.2_tailwindcss@3.2.1:
