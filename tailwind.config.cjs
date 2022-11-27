@@ -4,6 +4,17 @@ module.exports = {
 	theme: {
 		colors: {
 			'primary': '#4646FA',
+			'dark': '#121139',
+			'white': '#FFFFFF',
+			'blue': '#423EE0',
+			'purple': '#7e5bef',
+			'pink': '#ff49db',
+			'orange': '#ff7849',
+			'green': '#13ce66',
+			'yellow': '#ffc82c',
+			'gray-dark': '#273444',
+			'gray': '#8492a6',
+			'gray-light': '#d3dce6',
 		},
 		fontFamily: {
 			sans: ['Graphik', 'sans-serif'],
