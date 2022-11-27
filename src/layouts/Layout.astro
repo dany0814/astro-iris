@@ -1,7 +1,7 @@
 ---
 import { AppConfig } from "@utils/AppConfig";
 import Footer from "@components/Footer.astro";
-import Navbar from "@components/Navbar.astro";
+import Header from "@components/Header.astro";
 export interface Props {
   head: {
     title: string;
@@ -25,7 +25,7 @@ const {
     <title>{title}</title>
   </head>
   <body>
-    <Navbar />
+    <Header />
     <slot />
     <Footer />
     <style is:global>
