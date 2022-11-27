@@ -7,7 +7,8 @@
       "paths": {
         "@components/*": ["src/components/*"],
         "@layouts/*": ["src/layouts/*"],
-        "@utils/*": ["src/utils/*"]
+        "@utils/*": ["src/utils/*"],
+        "@icons/*": ["./node_modules/.pnpm/@tabler+icons@1.113.0/node_modules/@tabler/icons/icons/*"]
       }
   },
   "include": ["src/**/*"],
