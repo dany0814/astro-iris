@@ -1,10 +1,11 @@
 ---
+import {AppConfig} from "@utils/AppConfig";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import Toogle from "../components/Toggle.astro";
----
 
-<Layout title="Welcome to Astro.">
+const {title,description} = AppConfig;
+---
+<Layout head = {{title, description}}>
   <main>
     <h1>Welcome to <span class="text-gradient">Astro</span></h1>
     <p class="instructions">
@@ -23,7 +24,7 @@ import Toogle from "../components/Toggle.astro";
         title="Integrations"
         body="Supercharge your project with new frameworks and libraries."
       />
-      <!-- <Card
+      <Card
         href="https://astro.build/themes/"
         title="Themes"
         body="Explore a galaxy of community-built starter themes."
@@ -32,24 +33,8 @@ import Toogle from "../components/Toggle.astro";
         href="https://astro.build/chat/"
         title="Community"
         body="Come say hi to our amazing Discord community. ❤️"
-      /> -->
+      />
     </ul>
-    <Toogle
-      id="1"
-	  question="Pregunta 1 unida"
-      option1="opción 1"
-      option2="opción 2"
-      option3="opción 3"
-      option4="opción 4"
-    />
-    <Toogle
-	  id="2"
-      question="Pregunta 2 otri"
-      option1="opción 1"
-      option2="opción 2"
-      option3="opción 3"
-      option4="opción 4"
-    />
   </main>
 </Layout>
 
