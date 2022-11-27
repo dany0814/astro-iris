@@ -8,6 +8,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.astro .",
     "astro": "astro"
   },
   "dependencies": {
@@ -16,6 +17,13 @@
     "@tailwindcss/aspect-ratio":"0.4.2",
     "@tailwindcss/typography":"0.5.8",
     "astro": "^1.4.2",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.0.24",
+    "prettier": "^2.6.2",
+    "prettier-plugin-astro": "^0.1.0-next.5",
+    "lint-staged": "^12.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "eslint": "^8.17.0",
+    "astro-eslint-parser": "^0.2.2"
   }
 }
