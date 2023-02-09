@@ -1,0 +1,19 @@
+version: '3.9'
+
+networks:
+  network_iot:
+    external:
+      name: iot-net
+
+services:
+  www:
+    container_name: iriscompany
+    build: .
+    restart: unless-stopped
+    environment:
+      - VIRTUAL_HOST=iriscompany.io, www.iriscompany.io
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=iriscompany.io, www.iriscompany.io
+      - LETSENCRYPT_EMAIL=jcanahuirev@gmail.com
+    networks:
+      - network_iot
