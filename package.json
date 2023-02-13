@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "astro": "^1.4.2",
+    "astro-icon": "^0.8.0",
+    "gsap": "^3.11.4",
     "vite-plugin-windicss": "^1.8.10",
     "windicss": "^3.5.6"
   }
