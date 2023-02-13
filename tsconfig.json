@@ -9,6 +9,9 @@
         "@utils/*": ["src/utils/*"],
       }
   },
+  "files": [
+    "node_modules/gsap/types/index.d.ts"
+  ],
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

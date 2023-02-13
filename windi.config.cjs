@@ -9,7 +9,9 @@ export default defineConfig({
     extend: {
       colors: {
         'dark': '#121139',
-        'light': '#ffffff'
+        'light': '#ffffff',
+        'purple': '#812DE2',
+        'blue': '#3A49F9'
       },
     },
   },
