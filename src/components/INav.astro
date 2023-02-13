@@ -2,16 +2,61 @@
 import "virtual:windi.css";
 ---
 
-<div class="flex">
-  <div class="flex">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+<div class="flex p-40px">
+  <button
+    data-collapse-toggle="navbar-default"
+    type="button"
+    class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+    aria-controls="navbar-default"
+    aria-expanded="false"
+  >
+    <span class="sr-only">Open main menu</span>
+    <svg
+      class="w-6 h-6"
+      aria-hidden="true"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      ><path
+        fill-rule="evenodd"
+        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+        clip-rule="evenodd"></path></svg
+    >
+  </button>
+  <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+    <ul
+      class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg text-white md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+    >
+      <li>
+        <a
+          class="mx-1rem px-10px hover:bg-hex-4646fa rounded-50px cursor-pointer"
+          >inicio</a
+        >
+      </li>
+      <li>
+        <a
+          class="mx-1rem px-10px hover:bg-hex-4646fa rounded-50px cursor-pointer"
+          >Servicios</a
+        >
+      </li>
+      <li>
+        <a
+          class="mx-1rem px-10px hover:bg-hex-4646fa rounded-50px cursor-pointer"
+          >clientes</a
+        >
+      </li>
+      <li>
+        <a
+          class="mx-1rem px-10px hover:bg-hex-4646fa rounded-50px cursor-pointer"
+          >FAQs</a
+        >
+      </li>
+    </ul>
   </div>
-  <div class="mx-auto w-127px h-54px <md:w-64px">
+  <div class="mx-auto w-127px h-54px <md:w-64pxp">
     <img
-      src="https://res.cloudinary.com/dkljgkuyy/image/upload/v1676070658/iris-astro/Group_3190_kxs4jx.jpg"
+      class="item-center"
+      src="https://res.cloudinary.com/dkljgkuyy/image/upload/v1676311271/iris-astro/Group_3200_f1hvin.png"
       alt="iris-logo"
     />
   </div>
@@ -19,7 +64,7 @@ import "virtual:windi.css";
     <label class="flex items-center relative w-max cursor-pointer select-none">
       <input
         type="checkbox"
-        class="appearance-none transition-colors cursor-pointer w-14 h-7 rounded-full focus:outline-none  bg-9F0AFF px-2rem"
+        class="appearance-none transition-colors cursor-pointer w-14 h-7 rounded-full focus:outline-none bg-hex-9130F4"
       />
       <span class="absolute font-medium text-xs uppercase right-1 text-white">
         <svg
@@ -75,7 +120,7 @@ import "virtual:windi.css";
 </div>
 <style>
   input:checked {
-    background-color: #4646FA; /* bg-green-500 */
+    background-color: #4646fa; /* bg-green-500 */
   }
 
   input:checked ~ span:last-child {

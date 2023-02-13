@@ -1,0 +1,23 @@
+---
+import { AppConfig } from "@utils/AppConfig";
+import INav from "@components/INav.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/logo.svg" />
+    <meta name="description" content={AppConfig.description} />
+    <meta name="author" content={AppConfig.author} />
+    <title>{AppConfig.title}</title>
+  </head>
+  <body>
+    <div class="bg-dark w-full h-full">
+      <INav />
+      <slot />
+      <!-- <Footer /> colocar en esta sección el footer-->
+    </div>
+  </body>
+</html>

@@ -6,7 +6,12 @@ export default defineConfig({
     container: false,
   },
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'dark': '#121139',
+        'light': '#ffffff'
+      },
+    },
   },
   extract: {
     include: ['./src/**/*.{vue,html,jsx,tsx,astro}'],

@@ -1,25 +1,26 @@
 ---
-import INav from '@components/INav.astro';
-import 'virtual:windi.css';
 
-let title = 'My Astro Site';
+import "virtual:windi.css";
+import Layout from "@layouts/Layout.astro";
+import Home from "@components/Home.astro";
 ---
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>{title}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <title>{title}</title> -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-</head>
-<body class="bg-indigo-600">
-    <INav/>
-    <main>
-        <div>
-            <div class="mx-auto">
-                <img class="mx-auto pt-2rem" width="60" height="80" src="/public/logo.svg" alt="Astro logo">
-                <h1 class="text-center" >Welcome to <a href="https://astro.build/">Astro</a></h1>
-            </div>
-        </div>
-    </main>
-</body>
+  </head>
+  <body class="bg-indigo-600">
+    <Layout>
+      <main>
+        <!-- <Home
+          title="Construyendo productos"
+          description="& servicios digitales"
+          body="Desarrollamos"
+        /> -->
+      </main>
+    </Layout></body
+  >
 </html>
