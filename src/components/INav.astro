@@ -1,0 +1,84 @@
+---
+import "virtual:windi.css";
+---
+
+<div class="flex">
+  <div class="flex">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="mx-auto w-127px h-54px <md:w-64px">
+    <img
+      src="https://res.cloudinary.com/dkljgkuyy/image/upload/v1676070658/iris-astro/Group_3190_kxs4jx.jpg"
+      alt="iris-logo"
+    />
+  </div>
+  <div class="items-center h-7 my-auto">
+    <label class="flex items-center relative w-max cursor-pointer select-none">
+      <input
+        type="checkbox"
+        class="appearance-none transition-colors cursor-pointer w-14 h-7 rounded-full focus:outline-none  bg-9F0AFF px-2rem"
+      />
+      <span class="absolute font-medium text-xs uppercase right-1 text-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-sun-high"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z"
+          ></path>
+          <path d="M6.343 17.657l-1.414 1.414"></path>
+          <path d="M6.343 6.343l-1.414 -1.414"></path>
+          <path d="M17.657 6.343l1.414 -1.414"></path>
+          <path d="M17.657 17.657l1.414 1.414"></path>
+          <path d="M4 12h-2"></path>
+          <path d="M12 4v-2"></path>
+          <path d="M20 12h2"></path>
+          <path d="M12 20v2"></path>
+        </svg>
+      </span>
+      <span class="absolute font-medium text-xs uppercase right-8 text-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-moon"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+          ></path>
+        </svg>
+      </span>
+      <span
+        class="w-7 h-7 right-7 absolute rounded-full transform transition-transform bg-gray-200"
+      ></span>
+    </label>
+  </div>
+</div>
+<style>
+  input:checked {
+    background-color: #4646FA; /* bg-green-500 */
+  }
+
+  input:checked ~ span:last-child {
+    --tw-translate-x: 1.75rem; /* translate-x-7 */
+  }
+</style>
