@@ -1,9 +1,9 @@
 ---
 export interface Props {
+  title_project: string;
   photos: Array<string>;
 }
-const { title_project } = Astro.props;
-const { photos } = Astro.props as Props;
+const { title_project, photos } = Astro.props;
 import { Icon } from "astro-icon";
 ---
 
