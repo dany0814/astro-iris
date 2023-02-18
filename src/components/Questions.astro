@@ -1,0 +1,55 @@
+---
+export interface Props {
+  items: Array<string>;
+  description: Array<string>;
+}
+const { title } = Astro.props;
+const { items } = Astro.props as Props;
+const { description } = Astro.props as Props;
+import { Icon } from "astro-icon";
+---
+
+<div class="lg:px-90 <xl:px-10 mt-20 mb-47">
+  <h1
+    class="text-white text-center font-mono tracking-tighter text-2xl lg:text-6xl font-600 mb-10"
+  >
+    {title}
+  </h1>
+  {
+    items.map((item, index) => (
+      <div>
+        <div class="acordeon p-3 text-white flex border-b-2 justify-between  border-[#FF17E8C9]">
+          <button id="boton" class="boton text-justify lg:text-2xl font-700 ">
+            {item}
+          </button>
+          
+          <div class="w-10 icono transform transition">
+            <Icon
+              name="ic:round-keyboard-arrow-down"
+            />
+          </div>
+        </div>
+        <div
+          class="content tranform transition duration-300 w-full hidden text-white border-b-2 border-[#FF17E8C9] mb-5"
+        >
+          { description[index] }
+        </div>
+      </div>
+    ))
+  }
+</div>
+<script>
+  var co = document.getElementsByClassName("acordeon");
+  var content = document.getElementsByClassName("content");
+  var icon = document.getElementsByClassName("icono");
+  var fin = co.length;
+  for (let i = 0; i < fin; i++) {
+    co[i].addEventListener("click", function () {
+      co[i].classList.toggle("!border-0");
+      icon[i].classList.toggle("rotate-180");
+      content[i].classList.toggle("py-5");
+      content[i].classList.toggle("hidden");
+    });
+  }
+  
+</script>
