@@ -2,22 +2,17 @@
 import "virtual:windi.css";
 import Project from "../components/Projects.astro";
 import Question from "../components/Questions.astro";
-let title = "My Astro Site";
-
+import Home from "@components/Home.astro";
+import Layout from "@layouts/Layout.astro";
 ---
-
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{title}</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  </head>
-  <body class="bg-indigo-600">
-    <main>
-      <div>
-        <div class="mx-auto">
-          <Project 
+<Layout>
+  <main>
+    <Home
+      title="Construyendo productos"
+      description="& servicios digitales"
+      body="Desarrollamos soluciones digitales para la industria, las empresas emergentes y las organizaciones sin fines de lucro con una red seleccionada de socios para garantizar la máxima funcionalidad e interoperabilidad entre el Internet de las cosas, el desarrollo de software y la inteligencia artificial."
+    />
+    <Project 
             title_project="Proyectos Entregados"
             photos={[
               "/rescue-logo.svg",
@@ -34,7 +29,7 @@ let title = "My Astro Site";
               "/tharsis-logo.svg",
             ]}
           />
-          <Question
+    <Question
             title="Preguntas frecuentes"
             items={[
               "¿Cuánto tarda el rediseño de una aplicación web?",
@@ -49,8 +44,6 @@ let title = "My Astro Site";
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta accusantium nulla, dignissimos officia quas, porro repellendus laborum facere quo voluptatum ex a, impedit quasi delectus asperiores. Ad nam cum nostrum?"
             ]}
           />
-           </div>
-      </div>
-    </main>
-  </body>
-</html>
+          
+  </main>
+</Layout>

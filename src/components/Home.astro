@@ -1,0 +1,58 @@
+---
+import { Icon } from 'astro-icon';
+import { gsap } from "gsap";
+export interface Props {
+	title: string;
+	description: string;
+	body: string;
+}
+
+const { title, description, body } = Astro.props;
+---
+<div class="container mx-auto py-4rem">
+	<div class="flex <md:h-800px h-700px">
+		<div class ="flex-col my-auto mx-12">
+			<div class="<md:text-4xl text-6xl font-bold">
+				<p class="gradient">{title}</p>
+				<p class="text-white">{description}</p>
+			</div>
+			<div class="<md:text-2xl text-3xl text-white pt-2rem text-justify">
+				<a>{body}</a>
+			</div>
+			<div class="flex flex-1 <lg:flex-col <lg:space-y-5 mx-auto py-4rem <md:mr-1.5rem lg:space-x-24 justify-center text-white font-bold">
+				<div class="bg-gradient-to-r from-purple to-blue rounded-md <md:w-full">
+					<div class="flex flex-1 m-1 rounded-md bg-dark">
+						<Icon name="mdi:linkedin" class="py-10px mx-2rem <md:h-10 h-12" />
+						<p class="<md:text-sm lg:w-50 py-12px h-12">Síguenos en Linkedin</p>
+					</div>
+				</div>
+				<div class="bg-gradient-to-r from-purple to-blue rounded-md <md:w-full">
+					<div class="flex flex-1 m-1 rounded-md bg-dark">
+						<Icon name="ic:baseline-discord" class="py-10px mx-2rem <md:h-10 h-12" />
+						<p class="<md:text-sm lg:w-50 py-12px h-12">Visítanos en Discord</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="<lg:hidden mx-4rem">
+			<img width="3000px" src="/home.svg">
+		</div>
+		<div class="absolute pt-16rem">
+			<img width="600px" src="/circle.svg">
+		</div>
+		<!-- <div class="absolute <lg:hidden right-0 top-0">
+			<img width="300px" src="/circle-right.svg">
+		</div> -->
+	</div>
+</div>
+
+<style>
+	.gradient {
+		font-size:larger;
+		font-weight: bold;	
+		/* font-family: Poppins; */
+			background: linear-gradient(to right, #4646F9, #9130F4);
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
+}
+</style>
