@@ -8,28 +8,28 @@ const { title, items, description } = Astro.props;
 import { Icon } from "astro-icon";
 ---
 
-<div class="lg:px-90 <xl:px-10 mt-20 mb-47">
+<div class="lg:px-90 <xl:px-10 mt-12 pb-47">
   <h1
-    class="text-white text-center font-mono tracking-tighter text-2xl lg:text-6xl font-600 mb-10"
+    class="text-white text-center font-mono tracking-tighter text-2xl xl:text-6xl font-600 mb-10"
   >
     {title}
   </h1>
   {
     items.map((item, index) => (
       <div>
-        <div class="acordeon p-3 text-white flex border-b-2 justify-between  border-[#FF17E8C9]">
-          <button id="boton" class="boton text-justify lg:text-2xl font-700 ">
+        <div class="acordeon p-3 text-white items-center  flex border-b-2 justify-between  border-[#FF17E8C9]">
+          <button id="boton" class="boton text-justify mr-3  xl:text-2xl font-700 ">
             {item}
           </button>
           
-          <div class="w-10 icono transform transition">
+          <div class="w-10  icono transform  transition">
             <Icon
-              name="ic:round-keyboard-arrow-down"
+              name="ic:round-keyboard-arrow-down" class="w-8 mx-auto"
             />
           </div>
         </div>
         <div
-          class="content tranform transition duration-300 w-full hidden text-white border-b-2 border-[#FF17E8C9] mb-5"
+          class="content tranform transition duration-300 w-full hidden text-white border-b-2 border-[#FF17E8C9] "
         >
           { description[index] }
         </div>
