@@ -1,6 +1,6 @@
 ---
 import { AppConfig } from "@utils/AppConfig";
-
+import INav from "@components/INav.astro";
 ---
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ import { AppConfig } from "@utils/AppConfig";
   </head>
   <body>
     <div class="bg-dark w-full h-full">
-      <!-- <Header /> colocar en esta sección el header-->
+      <INav />
       <slot />
       <!-- <Footer /> colocar en esta sección el footer-->
     </div>
