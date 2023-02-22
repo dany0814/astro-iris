@@ -8,17 +8,20 @@ export interface Props {
 
 const { title, description, body } = Astro.props;
 ---
-<div class="container mx-auto py-4rem">
+<div class="container mx-auto">
 	<div class="flex <md:h-800px h-700px">
-		<div class ="flex-col my-auto mx-12">
-			<div class="<md:text-4xl text-6xl font-bold">
+		<div class ="flex-col my-auto mx-12 <md:my-0.5rem lg:mx-4rem">
+			<div class="<lg:visible <lg:w-auto m-0.5rem lg:hidden md:hidden xl:hidden max-w-350px">
+				<img width="1000px" src="/home.svg">
+			</div>
+			<div class="<md:text-2xl text-6xl font-bold">
 				<p class="gradient">{title}</p>
 				<p class="text-white">{description}</p>
 			</div>
-			<div class="<md:text-2xl text-3xl text-white pt-2rem text-justify">
+			<div class="<md:text-base <lg:font-600 text-2xl text-white pt-2rem text-left">
 				<a>{body}</a>
 			</div>
-			<div class="flex flex-1 <lg:flex-col <lg:space-y-5 mx-auto py-4rem <md:mr-1.5rem lg:space-x-24 justify-center text-white font-bold">
+			<div class="flex flex-1 <lg:flex-col <lg:space-y-4 mx-auto py-4rem <md:mr-1.5rem lg:space-x-24 justify-center text-white font-bold">
 				<div class="bg-gradient-to-r from-purple to-blue rounded-md <md:w-full">
 					<div class="flex flex-1 m-1 rounded-md bg-dark">
 						<Icon name="mdi:linkedin" class="py-10px mx-2rem <md:h-10 h-12" />
@@ -33,7 +36,7 @@ const { title, description, body } = Astro.props;
 				</div>
 			</div>
 		</div>
-		<div class="<lg:hidden mx-4rem">
+		<div class="<xl:hidden mx-4rem my-auto">
 			<img width="3000px" src="/home.svg">
 		</div>
 		<div class="absolute pt-16rem">

@@ -7,48 +7,45 @@ export interface Props {
 
 const { title, description, body } = Astro.props;
 ---
-<div class="container mx-auto py-4rem">
-	<div class="flex <md:h-800px h-700px">
-		<div class ="flex-col my-auto mx-12">
-			<div class="<md:text-4.3xl text-center text-5xl font-bold">
+<div class="container mx-auto pt-8rem <md:h-800px h-800px">
+	<div class="flex">
+		<div class ="flex-col my-auto mx-auto <lg:mx-12 mx-8rem">
+			<div class="<md:text-2xl text-center text-5xl font-bold">
 				<p class="gradient">{title}</p>
 				<p class="text-white">{description}</p>
 			</div>
-			<div class="md:text-1xl text-white <md:text-2xl text-center text-1xl text-white lg:px-20rem pt-2rem text-center">
+			<div class="text-white lg:mx-24rem <lg:font-600 <md:text-base text-center text-2xl text-white pt-4rem text-center">
 				<a>{body}</a>
 			</div>
-			<!-- <div class="flex flex-1 <lg:flex-col <lg:space-y-5 mx-auto py-4rem <md:mr-1.5rem lg:space-x-24 justify-center text-white font-bold"> -->
-                <div class="flex flex 1 ml-15rem <lg: flex-row container  md:hidden <sm:hidden">
-				<div class="bg-gradient-to-r pt-2rem <md:w-full">
-					<div class="flex flex-1 m-1 rcontainer mx-auto">
-						<img class="py-10px mx-6rem <md:h-10 h-12" src="/public/apk.svg" />
-                        <img class="py-10px mx-4rem <md:h-10 h-12" src="/public/cloud.svg" />
-                        <img class="py-10px mx-6rem <md:h-10 h-12" src="/public/edit.svg" />
-                        <img class="py-10px mx-5rem <md:h-10 h-12" src="/public/user.svg" />
-					</div>
-				</div>
-			</div>
-            <div class="flex flex 1 <lg: flex-row text-center mx-15rem md:hidden <sm:hidden">
-				<div class="bg-gradient-to-r <md:w-full">
-					<div class="flex flex-1 m-1 rounded-md bg-dark">
-						<p class="<md:text-sm text-white lg:w-50 px-12px h-12 text-white">Mantenimiento de bajo costo para tus aplicaciones
-                        </p>
-                       <p class="<md:text-sm text-white lg:w-50 px-12px h-12 text-white">Implementaciones en producción locales y en la nube</p>
-                       <p class="<md:text-sm text-white lg:w-50 px-12px h-12 text-white">Diseño de Arquitectura de Sistemas Distribuidos
-                    </p>
-                    <p class="<md:text-sm text-white lg:w-50 pyx12px h-12 text-white">Diseño de Producto, Interfaz y Experiencia de Usuario
-                    </p>
-					</div>
-				</div>
-		</div>
         </div>
-		<div class="absolute pt-16rem">
-			<img width="600px" src="/circle.svg">
-		</div>
-		<div class="absolute <lg:hidden right-0 top-0">
-			<img width="300px" src="/circle-right.svg">
+    </div>
+	<!-- <div class="flex flex-1 <lg:flex-col <lg:space-y-5 mx-auto py-4rem <md:mr-1.5rem lg:space-x-24 justify-center text-white font-bold"> -->
+    <div class="w-full <xl:hidden">
+		<div class="pt-4rem">
+			<div class="flex flex-1 space-x-20rem mx-auto justify-center pb-2rem">
+				<img class="py-10px <md:h-10 h-20" src="/apk.svg" />
+                <img class="py-10px <md:h-10 h-20" src="/cloud.svg" />
+                <img class="py-10px <md:h-10 h-20" src="/edit.svg" />
+                <img class="py-10px <md:h-10 h-20" src="/user.svg" />
+			</div>
 		</div>
 	</div>
+       <div class="<xl:hidden text-center mx-auto <sm:hidden">
+		<div class="bg-gradient-to-r <md:w-full">
+			<div class="flex flex-1 rounded-md text-2xl text-white <lg:font-600 <md:text-base space-x-8rem justify-center">
+			    <p class="<md:text-sm lg:w-65 h-12">Mantenimiento de bajo costo para tus aplicaciones.</p>
+                <p class="<md:text-sm lg:w-65 h-12">Implementaciones en producción locales y en la nube.</p>
+                <p class="<md:text-sm lg:w-65 h-12">Diseño de Arquitectura de Sistemas Distribuidos.</p>
+                <p class="<md:text-sm lg:w-65 h-12">Diseño de Producto, Interfaz y Experiencia de Usuario.</p>
+			</div>
+		</div>
+       </div>
+		<!-- <div class="absolute pt-16rem">
+			<img width="600px" src="/circle.svg">
+		</div> -->
+		<!-- <div class="absolute <lg:hidden right-0 top-0">
+			<img width="300px" src="/circle-right.svg">
+		</div> -->
        <!-- CAROUSEL -->
        <div id="default-carousel" class="relative lg:hidden" data-carousel="static">
         <!-- Carousel wrapper -->
