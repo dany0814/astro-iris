@@ -1,0 +1,198 @@
+---
+export interface Props {
+  title_project: string;
+  photos: Array<string>;
+}
+const { title_project, photos } = Astro.props;
+import { Icon } from "astro-icon";
+---
+
+<div class="<2xl:mt-12">
+  <h1
+    class="text-white xl:hidden text-center font-mono tracking-tighter text-2xl font-600 mb-3"
+  >
+    {title_project}
+  </h1>
+  <div class="relative flex justify-center items-center w-full">
+    <img src="/Subtract.svg" class="w-full bg-local" alt="bg-project" />
+
+    <div class="absolute lg:w-full overflow-x-hidden">
+      <h1
+        class="text-white text-center font-mono tracking-tighter lg:text-5xl font-600 <xl:hidden xl:mb-10 lg:mb-16"
+      >
+        {title_project}
+      </h1>
+      <!-- carrusel -->
+      <div class="lg:grid flex lg:grid-cols-1">
+        <!-- COLOCAR ICONOS -->
+        <div class="items-center lg:hidden justify-center mr-10 flex">
+          <div class="w-10">
+            <Icon
+              id="prev-arrow"
+              class="text-white text-lg"
+              name="ic:round-keyboard-arrow-left"
+            />
+          </div>
+        </div>
+        <div class="z-0 mx-auto">
+          <div class="slider <lg:w-50 lg:w-60rem">
+            <div class="slide-track-lg slide-track-animation-1 items-center">
+              {
+                photos.map((photo) => (
+                  <div class="slide">
+                    <img src={photo} alt="" />
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+        <!-- COLOCAR ICONOS -->
+        <div class="items-center lg:hidden justify-center ml-10 flex">
+          <div class="w-10">
+            <Icon
+              id="next-arrow"
+              class="text-white text-lg"
+              name="ic:round-keyboard-arrow-right"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="absolute boton lg:bottom-10 <lg:bottom-0 justify-center text-white gap-3 flex"
+    >
+      <button class="w-2 h-2 bg-white rounded-full bg-blue-600 dot active"
+      ></button>
+      <button class="w-2 h-2 bg-white rounded-full dot"></button>
+      <button class="w-2 h-2 bg-white rounded-full dot"></button>
+    </div>
+  </div>
+
+  <!-- Dots mode smartphone -->
+  <div class="hidden boton2 justify-center text-white gap-3 flex">
+    <button class="w-2 h-2 rounded-full bg-blue-600 dot2"></button>
+    <button class="w-2 h-2 bg-white rounded-full dot2"></button>
+    <button class="w-2 h-2 bg-white rounded-full dot2"></button>
+  </div>
+</div>
+<script>
+  var slide_track = document.querySelector<HTMLElement>(".slide-track-lg");
+  var slide_animation = document.querySelector<HTMLElement>(
+    ".slide-track-animation-1"
+  );
+  var next_btn = document.querySelector<HTMLElement>("#next-arrow");
+  var prev_btn = document.querySelector<HTMLElement>("#prev-arrow");
+  var botone = document.querySelector(".boton");
+
+  var slide = document.getElementsByClassName("slide");
+  var count_slide = slide.length;
+
+  var column = Math.round(count_slide / 4);
+
+  var temp;
+  var dots_m = "";
+  for (let x = 1; x < column; x++) {
+    if (x != 0) {
+      temp = botone!.textContent =
+        '<button class="w-2 h-2 bg-white rounded-full dot"></button>';
+      dots_m = dots_m + temp;
+    }
+  }
+
+  console.log(dots_m);
+
+  botone!.innerHTML =
+    '<button class="w-2 h-2 rounded-full dot bg-white !bg-blue"></button>' +
+    dots_m;
+
+  slide_track!.style.width = "calc(250px * " + count_slide + ")";
+
+  const dots = document.querySelectorAll(".dot");
+
+  let activeDotNum = 0;
+
+  dots.forEach((dot, idx) => {
+    dot.setAttribute("data-num", String(idx));
+
+    dot.addEventListener("click", (e) => {
+      if (!(e.target instanceof HTMLButtonElement)) {
+        return;
+      }
+      var clickedDotNum = e.target.dataset.num;
+      if (Number(clickedDotNum) == activeDotNum) {
+        return;
+      } else {
+        dots[activeDotNum].classList.remove("!bg-blue");
+        dots[Number(clickedDotNum)].classList.add("!bg-blue");
+        var actual_number = 0;
+        actual_number = 1000 * Number(clickedDotNum);
+        slide_animation!.style.transform =
+          "translateX(-" + actual_number + "px)";
+
+        activeDotNum = Number(clickedDotNum);
+      }
+    });
+  });
+  var a_position = 0;
+  var temp2 = column * 1000;
+  function next() {
+    if (a_position >= temp2 - 250) {
+      a_position = 0;
+    } else {
+      a_position = a_position + 250;
+    }
+    slide_animation!.style.transform = "translateX(-" + a_position + "px)";
+  }
+  function prev() {
+    if (a_position == 0) {
+      a_position = temp2 - 250;
+    } else {
+      a_position = a_position - 250;
+    }
+
+    slide_animation!.style.transform = "translateX(-" + a_position + "px)";
+  }
+  next_btn!.addEventListener("click", next);
+  prev_btn!.addEventListener("click", prev);
+</script>
+
+<style>
+  .slider {
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .slider .slide-track-lg {
+    display: flex;
+
+    width: calc(250px * 17);
+  }
+
+  .slider .slide-track-animation-1 {
+    transform: translateX(-0%);
+    transition: 1s;
+  }
+
+  .slider .slide {
+    width: 300px;
+    margin: 2rem;
+  }
+
+  .slider .slide img {
+    width: 80%;
+  }
+
+  @keyframes scroll {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-200px * 7));
+      transform: translateX(calc(-200px * 7));
+    }
+  }
+
+  
+</style>
