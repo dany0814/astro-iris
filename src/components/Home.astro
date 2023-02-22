@@ -9,8 +9,8 @@ export interface Props {
 const { title, description, body } = Astro.props;
 ---
 <div class="container mx-auto">
-	<div class="flex <md:h-900px lg:h-700px h-800px">
-		<div class ="flex-col my-auto mx-12 <md:my-0.5rem lg:mx-4rem">
+	<div class="flex <md:h-900px lg:h-700px mr-2rem">
+		<div class ="flex-col my-auto <md:mx-3rem <md:my-auto lg:mx-4rem md:mx-4rem">
 			<div class="<lg:visible <lg:w-auto m-0.5rem lg:hidden md:hidden xl:hidden max-w-350px">
 				<img width="1000px" src="/home.svg">
 			</div>
@@ -36,15 +36,15 @@ const { title, description, body } = Astro.props;
 				</div>
 			</div>
 		</div>
-		<div class="<xl:hidden mx-4rem my-auto">
+		<div class="<xl:hidden mx-2rem my-auto w-max-2500px">
 			<img width="3000px" src="/home.svg">
 		</div>
 		<div class="absolute pt-16rem">
 			<img width="600px" src="/circle.svg">
 		</div>
-		<!-- <div class="absolute <lg:hidden right-0 top-0">
+		<div class="absolute <lg:hidden right-0 top-0">
 			<img width="300px" src="/circle-right.svg">
-		</div> -->
+		</div>
 	</div>
 </div>
 
