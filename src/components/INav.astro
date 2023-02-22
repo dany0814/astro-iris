@@ -29,19 +29,19 @@ import "virtual:windi.css";
     >
       <li>
         <a
-          class="mx-0.5rem px-10px hover:bg-hex-4646fa rounded-50px cursor-pointer"
+          class="mx-1rem px-10px hover:bg-hex-4646fa rounded-50px cursor-pointer"
           >inicio</a
         >
       </li>
       <li>
         <a
-          class="mx-0.5rem px-10px hover:bg-hex-4646fa rounded-50px cursor-pointer"
+          class="mx-1rem px-10px hover:bg-hex-4646fa rounded-50px cursor-pointer"
           >Servicios</a
         >
       </li>
       <li>
         <a
-          class="mx-0.5rem px-10px hover:bg-hex-4646fa rounded-50px cursor-pointer"
+          class="mx-1rem px-10px hover:bg-hex-4646fa rounded-50px cursor-pointer"
           >clientes</a
         >
       </li>
@@ -53,38 +53,20 @@ import "virtual:windi.css";
       </li>
     </ul>
   </div>
+  <div class="mx-auto w-127px h-54px <md:w-64pxp">
     <img
-      class="h-54px w-127px item-center mx-auto <md:w-64pxp"
+      class="item-center"
       src="https://res.cloudinary.com/dkljgkuyy/image/upload/v1676311271/iris-astro/Group_3200_f1hvin.png"
       alt="iris-logo"
     />
-  <div class="items-center ml-auto h-7 my-auto flex">
-    <label class="mx-2rem flex items-center relative w-max cursor-pointer select-none">
+  </div>
+  <div class="items-center h-7 my-auto flex">
+    <label class="flex items-center relative w-max cursor-pointer select-none">
       <input
         type="checkbox"
-        class="appearance-none transition-colors cursor-pointer w-14 h-7 rounded-full focus:outline-none bg-hex-9130F4 bg-hex-4646fa"
+        class="appearance-none transition-colors cursor-pointer w-14 h-7 rounded-full focus:outline-none bg-hex-9130F4"
       />
       <span class="absolute font-medium text-xs uppercase right-1 text-white">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-moon"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="currentColor"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path
-            d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
-          ></path>
-        </svg>
-        
-      </span>
-      <span class="absolute font-medium text-xs uppercase right-8 text-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="icon icon-tabler icon-tabler-sun-high"
@@ -109,6 +91,25 @@ import "virtual:windi.css";
           <path d="M12 4v-2"></path>
           <path d="M20 12h2"></path>
           <path d="M12 20v2"></path>
+        </svg>
+      </span>
+      <span class="absolute font-medium text-xs uppercase right-8 text-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-moon"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
+          ></path>
         </svg>
       </span>
       <span
@@ -138,7 +139,7 @@ import "virtual:windi.css";
 </div>
 <style>
   input:checked {
-    background-color: #9130F4; /* bg-green-500 */
+    background-color: #4646fa; /* bg-green-500 */
   }
 
   input:checked ~ span:last-child {
