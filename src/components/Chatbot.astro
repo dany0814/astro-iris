@@ -1,0 +1,236 @@
+---
+export interface Props {
+  img: string;
+  greeting: string;
+  description: string;
+  chatname: string;
+  emotions: Array<string>;
+  title_chat: string;
+}
+const { title_chat, emotions, chatname, greeting, description, img } = Astro.props;
+
+import { Icon } from "astro-icon";
+---
+
+<label for="btn-chatbot">
+  <button
+    id="btn-chatbot"
+    class="flex shadow shadow-5 justify-center bg-[#fafafc] items-center border border-5 fixed bottom-10 right-10 md:right-20 cursor-pointer z-5 w-20 h-20 rounded-full"
+  >
+    <div id="present-point" class="absolute top-0 right-1">
+        <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+        </span>
+    </div>
+    <img
+      id="avatar-img"
+      src={img}
+      class="rounded-full"
+      alt=""
+    />
+    <Icon
+      class="text-gray-400 hover:text-black text-sm w-8 text-center"
+      name="ic:round-close"
+    />
+  </button>
+</label>
+
+<div
+  id="chatbot"
+  tabindex="-1"
+  aria-hidden="true"
+  class="fixed btn_animated hidden shadow bottom-10 max-w-md rounded-br-5xl right-10 md:right-20 z-4 overflow-x-hidden overflow-y-auto"
+>
+  <div class="relative w-full h-full max-w-xl">
+    <!-- Modal content -->
+    <div class="relative bg-[#fafafc] rounded-lg shadow">
+      <!-- Modal header -->
+      <div
+        class="flex items-center gap-5 items-start font-semibold px-10 pt-8 pb-6 rounded-t"
+      >
+        <img
+          src={img}
+          class="w-20 h-20 rounded-full"
+          alt="avatar"
+        />
+        <div>
+          <h1>{chatname}</h1>
+          <h2 class="text-gray-400">{description}</h2>
+        </div>
+      </div>
+      <!-- Chatbot Presentation -->
+      <div id="presentation" class="px-10 pb-20 space-y-6">
+        <p class="font-semibold mb-5">
+          Hi <span class="text-sky-500 bg-gray-200">{greeting}</span>
+        </p>
+        <p class="font-light mb-5 text-2xl">Bienvenido! 🎉</p>
+        <p class="font-semibold mb-5">
+          Mi nombre es {chatname} Soy un robot diseñado para guiarte durante tu estadia
+          en Iris Company.
+        </p>
+        <input
+          type="submit"
+          id="next-btn"
+          class="bg-[#111038] hover:bg-[#484785] text-white py-2 cursor-pointer px-5 rounded-lg"
+          value="Continuar"
+        />
+      </div>
+      <!-- Chatbot body -->
+      <form action="">
+        <div id="chatbot-body" class="px-10 pb-10 hidden space-y-6">
+          <p class="font-semibold mb-5">
+            {title_chat}
+          </p>
+          <div class="gap-8 flex flex-wrap">
+            {
+              emotions.map((photo, co) => (
+                <>
+                  <label for={"r" + co}>
+                    <input
+                      id={"r" + co}
+                      type="radio"
+                      class="hidden radio-active"
+                      name="radios"
+                    />
+                    <span
+                      class={
+                        "id p-3 hover:bg-[#111038] hover:text-white cursor-pointer rounded-lg shadow r" +
+                        co
+                      }
+                    >
+                      {photo}
+                    </span>
+                  </label>
+                </>
+              ))
+            }
+          </div>
+          <p class="font-semibold mt-5 mb-5">Escribeme tu consulta:</p>
+          <textarea
+            name="consultation"
+            id=""
+            class="w-full shadow h-30 px-5 py-4 overflow-y-auto"
+            value="texto"
+          >
+          </textarea>
+          <input
+            type="submit"
+            class="bg-[#111038] hover:bg-[#484785] text-white py-2 cursor-pointer px-5 rounded-lg"
+            value="Enviar"
+          />
+        </div>
+      </form>
+      <!-- Modal footer -->
+    </div>
+  </div>
+</div>
+<style>
+  .btn_animated {
+    border: none;
+  }
+
+  .btn_animated.animate {
+    -webkit-animation: jello-horizontal 0.5s both;
+    animation: jello-horizontal 0.5s both;
+  }
+  @-webkit-keyframes jello-horizontal {
+    0% {
+      opacity: 0;
+    }
+    15% {
+      opacity: 0.15;
+    }
+    25% {
+      opacity: 0.35;
+    }
+    45% {
+      opacity: 0.5;
+    }
+    75% {
+      opacity: 1;
+    }
+  }
+
+  .btn_animated.animate2 {
+    -webkit-animation: jello-horizontal2 1s both;
+    animation: jello-horizontal2 1s both;
+  }
+  @-webkit-keyframes jello-horizontal2 {
+    0% {
+      opacity: 1;
+    }
+    15% {
+      opacity: 0.5;
+    }
+    25% {
+      opacity: 0.35;
+    }
+    45% {
+      opacity: 0.15;
+    }
+    75% {
+      opacity: 0;
+    }
+  }
+</style>
+<script>
+  const boton = document.getElementById("btn-chatbot");
+  var estado = 0,
+    c = 0,
+    name;
+
+  const buttons = document.querySelectorAll("input.radio-active");
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      let temp = button.id;
+      var idspan = document.querySelectorAll<HTMLElement>(".id");
+      for (let i = 0; i < idspan.length; i++) {
+        name = "r" + i;
+
+        if (name == temp) {
+          idspan[i].classList.add("bg-[#111038]");
+          idspan[i].classList.add("text-white");
+        } else {
+          idspan[i].classList.remove("bg-[#111038]");
+          idspan[i].classList.remove("text-white");
+        }
+      }
+    });
+  });
+  function chatbot() {
+    var a = document.getElementById("chatbot");
+    var img = document.getElementById("avatar-img");
+
+    if (c == 1) {
+      //quitar el modal
+      a!.classList.remove("animate");
+      img!.classList.remove("hidden");
+      a!.classList.add("hidden");
+      c = 0;
+    } else {
+      //mostrar el modal
+      var chatbotBody = document.getElementById("chatbot-body");
+      var presentation = document.getElementById("presentation");
+      if (estado == 0) {
+        const next_btn = document.getElementById("next-btn");
+        const present_point = document.getElementById("present-point");
+        next_btn!.addEventListener("click", () => {
+          chatbotBody!.classList.remove("hidden");
+          presentation!.classList.add("hidden");
+          present_point!.classList.add("hidden");
+        });
+
+        estado++;
+      }
+      a!.classList.add("animate");
+      img!.classList.add("hidden");
+      a!.classList.remove("hidden");
+      c++;
+    }
+  }
+
+  boton!.addEventListener("click", function () {
+    chatbot();
+  });
+</script>

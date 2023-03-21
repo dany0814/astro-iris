@@ -3,15 +3,29 @@ import "virtual:windi.css";
 import Project from "../components/Projects.astro";
 import Question from "../components/Questions.astro";
 import Home from "@components/Home.astro";
-import Web from '@components/Web.astro';
+import Web from "@components/Web.astro";
 import Layout from "@layouts/Layout.astro";
 import Brand from "@components/Brand.astro";
 import Brain from "@components/Brain.astro";
-
-
+import Chat from "@components/Chatbot.astro";
 ---
+
 <Layout>
   <main>
+    <Chat
+      img = "./avatar-ejemplo.jpg"
+      description="Tu Asistente Virtual"
+      chatname="Tolu"
+      greeting="@Praise"
+      title_chat="¿Cómo te sientes hoy en nuestra plataforma?"
+      emotions={[
+        "🤩 Increible",
+        "👍 Bien",
+        "😅 No lo sé",
+        "😔 No muy bien",
+        "😠 Terriblemente",
+      ]}
+    />
     <Home
       title="Construyendo productos"
       description="& servicios digitales"
@@ -19,11 +33,11 @@ import Brain from "@components/Brain.astro";
     />
     <Brand />
     <Web
-        title="Desarrollo, Integración y"
-        description="Despliegue de aplicaciones Web Productos"
-        body="Nuestro equipo utiliza las mejores herramientas de desarrollo para hacer que su aplicación sea robusta, segura y optimizada. Entregamos aplicaciones web que su equipo de tecnología de la información puede personalizar o actualizar sin mucho esfuerzo."
-        />
-    <Brain 
+      title="Desarrollo, Integración y"
+      description="Despliegue de aplicaciones Web Productos"
+      body="Nuestro equipo utiliza las mejores herramientas de desarrollo para hacer que su aplicación sea robusta, segura y optimizada. Entregamos aplicaciones web que su equipo de tecnología de la información puede personalizar o actualizar sin mucho esfuerzo."
+    />
+    <Brain
       title="Cree sus propias soluciones y productos"
       description="de I.A. personalizadas"
       body="Comience con una experiencia completamente administrada por usted con nosotros. Lo ayudamos a lo largo de todo el proceso de IA, para que pueda crear, entrenar e implementar modelos de aprendizaje automático o profundo fácilmente para su propio caso de negocio."
